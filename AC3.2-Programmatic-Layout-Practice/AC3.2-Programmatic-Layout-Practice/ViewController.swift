@@ -13,15 +13,37 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.view.backgroundColor = .green
+    
     // 1. Add Scroll View 
-    
+    self.view.addSubview(scrollView)
+    self.scrollView.translatesAutoresizingMaskIntoConstraints = false
     // 2. Add Scroll Constraints
+    self.edgesForExtendedLayout = []
     
-    // 3. Add View 
+    let _ = [
+      scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0),
+      scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0),
+      scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0),
+      scrollView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 8.0)
+      ].map { $0.isActive = true }
+    
+    // 3. Add View
+    self.scrollView.addSubview(redView)
+    self.redView.translatesAutoresizingMaskIntoConstraints = false
     
     // 4. Add View Contraints
-    
-    // 5. Make it scroll
+    let _ = [
+      redView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 2.0),
+      redView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 2.0),
+      
+      // 5. Make it scroll
+      redView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
+      redView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
+      redView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
+      redView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+      ].map{ $0.isActive = true }
+  
     
   }
 
@@ -32,17 +54,19 @@ class ViewController: UIViewController {
 
   lazy var scrollView: UIScrollView = {
     let view: UIScrollView = UIScrollView()
-    view.backgroundColor = .green
+    view.backgroundColor = .blue
     view.showsVerticalScrollIndicator = true
     view.showsHorizontalScrollIndicator = true
-    view.alwaysBounceHorizontal = true
-    view.alwaysBounceVertical = true
+    view.accessibilityIdentifier = "SCROLL"
+//    view.alwaysBounceHorizontal = true
+//    view.alwaysBounceVertical = true
     return view
   }()
   
   lazy var redView: UIView = {
     let view: UIView = UIView()
     view.backgroundColor = .red
+    view.accessibilityIdentifier = "RED"
     return view
   }()
 

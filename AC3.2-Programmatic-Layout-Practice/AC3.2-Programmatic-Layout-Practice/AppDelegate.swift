@@ -17,14 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     // 1. Instantiate a root view controller
+    let rootVC = ViewController()
     
     // 2. Instantiate a container view controller
+    let navVC = UINavigationController(rootViewController: rootVC)
     
     // 3. Instatiate a new window
+    self.window = UIWindow(frame: UIScreen.main.bounds)
     
     // 4. Set the window's root view controller
+    self.window?.rootViewController = navVC
     
     // 5. Display the content of your window
+    self.window?.makeKeyAndVisible()
     
     return true
   }
