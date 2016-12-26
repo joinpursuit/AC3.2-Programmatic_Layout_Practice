@@ -12,21 +12,21 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     self.view.backgroundColor = .green
     
     // 1. Add Scroll View 
     self.view.addSubview(scrollView)
     self.scrollView.translatesAutoresizingMaskIntoConstraints = false
     // 2. Add Scroll Constraints
-    self.edgesForExtendedLayout = []
-    
+
+
+    //self.edgesForExtendedLayout = []
     let _ = [
-      scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0),
-      scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0),
-      scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0),
-      scrollView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 8.0)
-      ].map { $0.isActive = true }
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0),
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0),
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0),
+        scrollView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 8.0)
+        ].map { $0.isActive = true }
     
     // 3. Add View
     self.scrollView.addSubview(redView)
