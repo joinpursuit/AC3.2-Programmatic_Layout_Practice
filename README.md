@@ -11,12 +11,11 @@
 
 #### Camera Crosshairs
 
-![ ](./Images/Portrait Camera.png)
-![ ](./Images/Landscape - Camera.png )
+![ ](https://github.com/C4Q/AC3.2-Programmatic_Layout_Practice/blob/master/Images/Portrait%20Camera.png)
+![ ](https://github.com/C4Q/AC3.2-Programmatic_Layout_Practice/blob/master/Images/Landscape%20-%20Camera.png)
 
 ---
 
 #### Tetras (definitely not Tetris)
-
-![ ](./Images/tetris - portrait.png)
-![ ](./Images/tetris - landscape.png)
+![ ](https://github.com/C4Q/AC3.2-Programmatic_Layout_Practice/blob/master/Images/tetris%20-%20portrait.png)
+![ ](https://github.com/C4Q/AC3.2-Programmatic_Layout_Practice/blob/master/Images/tetris%20-%20landscape.png)
